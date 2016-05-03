@@ -269,7 +269,7 @@ public class OAuth2: OAuth2Base {
 	- parameter params:   Optional key/value pairs to pass during authorization
 	- parameter callback: The callback to call once the client knows whether it has an access token or not
 	*/
-	func tryToObtainAccessTokenIfNeeded(params params: OAuth2StringDict? = nil, callback: ((success: Bool) -> Void)) {
+	public final func tryToObtainAccessTokenIfNeeded(params params: OAuth2StringDict? = nil, callback: ((success: Bool) -> Void)) {
 		if hasUnexpiredAccessToken() {
 			callback(success: true)
 		}
